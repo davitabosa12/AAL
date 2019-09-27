@@ -1,0 +1,19 @@
+{
+  "name": "aal-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "argparse": "^1.0.10",
+    "csv-parser": "^2.3.0",
+    "protobufjs": "^6.8.8",
+    "yargs": "^14.0.0"
+  }
+}

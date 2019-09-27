@@ -1,0 +1,7 @@
+[LEGRAND 1] 	 2.1846060752868652 	 {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
+[LEGRAND 2] 	 7.251925230026245 	 {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
+[LEGRAND 3] 	 11.067068815231323 	 {'Location': 'not defined', 'Entity_Id': '0x16a31', 'Timestamp': ''}
+[LEGRAND 4] 	 12.520970106124878 	 {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
+[LEGRAND 5] 	 17.416666984558105 	 {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
+[LEGRAND 6] 	 21.43705439567566 	 {'Location': 'not defined', 'Entity_Id': '0x16a31', 'Timestamp': ''}
+[LEGRAND 7] 	 22.50213313102722 	 {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+message Data {
+	int32 Entity_Id = 1;
+	string Timestamp = 2;
+	string RawData = 3;
+	string Accuracy = 4;
+	string Location = 5;
+	string Criticalness = 6;
+	string SamplingFrequency = 7;
+}

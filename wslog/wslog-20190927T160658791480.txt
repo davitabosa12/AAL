@@ -1,0 +1,13 @@
+[Received] 2.1311404705047607 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '2.0320000648498535'}
+[Received] 4.0925397872924805 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '4.039000034332275'}
+[Received] 6.09299373626709 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '6.039999961853027'}
+[Received] 8.096420049667358 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '8.04699993133545'}
+[Received] 10.108082056045532 -> {'Location': 'room', 'Entity_Id': '123', 'Timestamp': '10.059999942779541'}
+[Received] 12.113046169281006 -> {'Location': 'room', 'Entity_Id': '123', 'Timestamp': '12.066999912261963'}
+[Received] 14.110986471176147 -> {'Location': 'room', 'Entity_Id': '123', 'Timestamp': '14.066999912261963'}
+[Received] 16.11033296585083 -> {'Location': 'room', 'Entity_Id': '123', 'Timestamp': '16.067999839782715'}
+[Received] 18.11790704727173 -> {'Location': 'dinner', 'Entity_Id': '123', 'Timestamp': '18.07800006866455'}
+[Received] 20.126435041427612 -> {'Location': 'dinner', 'Entity_Id': '123', 'Timestamp': '20.088000059127808'}
+[Received] 22.13670539855957 -> {'Location': 'dinner', 'Entity_Id': '123', 'Timestamp': '22.09999990463257'}
+[Received] 24.135894536972046 -> {'Location': 'dinner', 'Entity_Id': '123', 'Timestamp': '24.10099983215332'}
+[Received] 26.140300989151 -> {'Location': 'dinner', 'Entity_Id': '123', 'Timestamp': '26.105000019073486'}
