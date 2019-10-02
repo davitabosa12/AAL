@@ -34,7 +34,7 @@ def log_timestamp(message, file_log, time_t0):
     print(current_time)
     
     with open(file_log, 'a') as log_file:
-        log_file.write(f"[Received] {current_time - time_t0} -> {message}\n")
+        log_file.write(f"{current_time - time_t0};{message}\n")
         
 time_t0 = 0
 # Setup arguments

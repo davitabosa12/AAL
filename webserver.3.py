@@ -94,14 +94,31 @@ def parse_json(msg):
     return json.loads(msg)
 
 def parse_legrand(msg_byte):
+    house_rooms = {
+    "0x1699a": "entrance",
+    "0x169d6": "room1",
+    "0x16a31": "room2",
+    "0x169c6": "kitchen",
+    "0x1929c": "bathroom",
+    "0x169d2": "bedroom"
+}
     device_id_dec = int(msg_byte[12:19])
     device_id_dec = device_id_dec >> 4
     device_id = hex(device_id_dec)
-    data = {
-        'Location' : "not defined",
-        'Entity_Id' : device_id,
-        'Timestamp' : ""
-    }
+    try:
+        data = {
+            'Location' : house_rooms[device_id],
+            'Entity_Id' : device_id,
+            'Timestamp' : ""
+        }
+    except KeyError:
+        data = {
+            'Location' : "unknown",
+            'Entity_Id' : -1,
+            'Timestamp' : ""
+        }
+        pass
+    
     return data
 
 

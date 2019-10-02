@@ -1,0 +1,3 @@
+[LEGRAND 1] 	 5.871968984603882 	 {'Location': 'not defined', 'Entity_Id': '0x1699a', 'Timestamp': ''}
+[LEGRAND 2] 	 11.908630609512329 	 {'Location': 'not defined', 'Entity_Id': '0x1699a', 'Timestamp': ''}
+[LEGRAND 3] 	 13.034157991409302 	 {'Location': 'not defined', 'Entity_Id': '0x169c8', 'Timestamp': ''}

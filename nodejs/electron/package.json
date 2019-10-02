@@ -1,0 +1,16 @@
+{
+  "name": "aal-tapir",
+  "version": "1.0.0",
+  "description": "tapir simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron index.js",
+    "build": "electron build index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  }
+}

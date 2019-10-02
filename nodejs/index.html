@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TAPIR control</title>
+</head>
+<body>
+    <h1>TAPIR control</h1>
+    <button id="kitchen_id">KITCHEN</button> <br>
+    <button id="room_id">ROOM</button> <br>
+    <button id="dinner_id">DINNER</button> <br>
+</body>
+<script>
+    var btnKitchen = document.getElementById("kitchen_id");
+    var btnRoom = document.getElementById("room_id");
+    var btnDinner = document.getElementById("dinner_id");
+    const main = require('electron').remote
+    const net = require('net');
+    btnRoom.addEventListener("click", () =>{
+        sendInfo("room");
+    });
+    btnKitchen.addEventListener("click", () =>{
+        sendInfo("kitchen");
+    });
+    btnDinner.addEventListener("click", () =>{
+        sendInfo("dinner");
+    });
+
+function sendInfo(info){
+    //read mock data from internal memory
+    var client = new net.Socket();
+    var gateway_address = main.getGlobal("gateway_address");
+    const PORT = 8077;
+    client.connect(PORT, gateway_address, function(){
+        var time_t0 = main.getGlobal("time_t0");
+        var time_now = Date.now().valueOf() / 1000;
+        const timeDelta = time_now - time_t0 + "";
+
+        var payload = {
+            Entity_Id: '123',
+            Timestamp: timeDelta,
+            Location: info + "_tp",
+        }
+        const stringified = "JSON\n" + JSON.stringify(payload);
+        //send CSV to Gateway
+        //console.log(`Sent message to ${gateway_address}: ${stringified}`);
+        
+            client.write(Buffer.from(stringified));
+            client.destroy();
+    });
+}
+</script>
+</html>
