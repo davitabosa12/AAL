@@ -39,16 +39,27 @@ def decode_serial(msg_byte):
     print("dec: " + str(device_id_dec))
     device_id_dec = device_id_dec >> 4
     device_id = hex(device_id_dec)
-    return device_id_dec    
+    return {
+    "dec" :device_id_dec,
+    "hex" : device_id
+    }
 
 
 
 def sendToRabbitMQ(msg_byte, channel, time_init):
+    house_rooms = {
+    "0x1699a": "entrance",
+    "0x169d6": "room1",
+    "0x16a31": "room2",
+    "0x169c6": "kitchen",
+    "0x1929c": "bathroom",
+    "0x169d2": "bedroom"
+    }
     decoded = decode_serial(msg_byte)
     data = data_pb2.Data()
     
-    data.Location = ""
-    data.Entity_Id = decoded
+    data.Location = house_rooms[decoded["hex"]]
+    data.Entity_Id = decoded["dec"]
     data.Timestamp = str(time.time() - time_init)
     to_rabbit = data.SerializeToString()
     print("Sending to RabbitMQ...")

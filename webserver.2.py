@@ -119,17 +119,18 @@ def readTCP():
             connection, client_addr = tcp_socket.accept()
             try:
                 print(f"Connection from {client_addr}...")
-                data = ""
+                protobuf_bytes = bytes()
                 while (True):
                     chunk = connection.recv(1000)
                     if(chunk):
-                        data += str(chunk, 'utf8')
+                        protobuf_bytes += chunk
                     else:
                         break
             finally:
                 connection.close()
             # log the data...
-            received(bytes(data, 'utf8'))
+            received(protobuf_bytes)
+            print(protobuf_bytes)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
     
@@ -137,7 +138,7 @@ def readTCP():
 
 
 async_server = threading.Thread(target=readTCP)
+async_server.daemon = True
 async_server.start()
-
 print("Starting Flask App...")
 socketio.run(app, host='0.0.0.0')

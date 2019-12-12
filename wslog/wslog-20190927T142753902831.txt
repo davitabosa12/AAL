@@ -1,2 +1,0 @@
-[Received] 2.0244929790496826 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '2.0199999809265137'}
-[Received] 4.025043249130249 -> {'Location': 'kitchen', 'Entity_Id': '123', 'Timestamp': '4.018999814987183'}

@@ -6,9 +6,10 @@ import sys
 import pika
 import serial as pyserial
 import time
-from datetime import datetime
+import datetime
 from iobl import parser
 import data_pb2
+PORT = 8077
 """
 Waits for ACTIVATE message from webserver. Returns the starting time and the webserver address.
 """
@@ -23,18 +24,10 @@ def waitForActivate():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
     sock.bind(('',41214)) #bind nada
-    data, address = sock.recv(1024)
+    data, address = sock.recvfrom(1024)
     
     return (time.time(), address)
 
-
-    
-def log_timestamp(message, file_log, time_t0):
-    current_time = time.time() # time in seconds since 01 January 1970 (fpu)
-    print(current_time)
-    
-    with open(file_log, 'a') as log_file:
-        log_file.write(f"[Received] {current_time - time_t0} -> {message}\n")
 
             
 def printEvent(event):
@@ -49,29 +42,31 @@ def decode_serial(msg_byte):
     print("dec: " + str(device_id_dec))
     device_id_dec = device_id_dec >> 4
     device_id = hex(device_id_dec)
-    return device_id_dec    
-
-
-
-def sendToRabbitMQ(msg_byte, channel, time_init):
-    decoded = decode_serial(msg_byte)
+    return {
+    "dec" :device_id_dec,
+    "hex" : device_id
+    }
     
-    print("Sending to RabbitMQ...")
-    channel.basic_publish(exchange='', routing_key='location', body= to_rabbit)
-    print("Sent: {}", to_rabbit)
-    
-def sendToAddress(msg_byte, addr, time_start):
+def sendToAddress(msg_byte, addr, time_init):
+    house_rooms = {
+    "0x1699a": "entrance",
+    "0x169d6": "room1",
+    "0x16a31": "room2",
+    "0x169c6": "kitchen",
+    "0x1929c": "bathroom",
+    "0x169d2": "bedroom"
+    }
     decoded = decode_serial(msg_byte)
     data = data_pb2.Data()
-    data.Location = ""
-    data.Entity_Id = decoded
+    data.Location = house_rooms[decoded["hex"]] or "unknown"
+    data.Entity_Id = decoded["dec"]
     data.Timestamp = str(time.time() - time_init)
-    to_rabbit = data.SerializeToString()
+    protobuf_data = data.SerializeToString()
     print(addr)
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect(addr)
-        s.settimeout(10.0)
-        s.sendall(header + msg_byte)
+        s.settimeout(1.0)
+        s.sendall(protobuf_data)
         
 def main():
     parser = argparse.ArgumentParser()
@@ -93,10 +88,7 @@ def main():
                 if(from_serial == bytes()): # if empty
                     pass
                 else:
-                    decoded = decode_serial(from_serial)
-                    header = b'LEGRAND\n'
-                    log_timestamp(decoded +header, log_file_name, time_t0)
-                    sendToAddress(from_serial, address, time_t0)
+                    sendToAddress(from_serial, (address[0], PORT), time_t0)
                     printEvent(from_serial)
             except KeyboardInterrupt:
                 print("Bye!")

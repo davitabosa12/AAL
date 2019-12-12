@@ -133,6 +133,7 @@ def consume():
     channel.start_consuming()
 
 async_consumer = threading.Thread(target=consume)
+async_consumer.daemon = True
 async_consumer.start()
 
 print("Starting Flask App...")

@@ -1,0 +1,122 @@
+{
+    "Older adults needs": {
+        "Framework": 6,
+        "Middleware": 1,
+        "Platform": 3,
+        "Architecture": 1,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 1,
+        "Robot Services": 0
+    },
+    "Heterogeneity": {
+        "Framework": 5,
+        "Middleware": 5,
+        "Platform": 2,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Interoperability": {
+        "Framework": 4,
+        "Middleware": 2,
+        "Platform": 3,
+        "Architecture": 1,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 1,
+        "Robot Services": 0
+    },
+    "Context Awareness": {
+        "Framework": 4,
+        "Middleware": 3,
+        "Platform": 2,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Security": {
+        "Framework": 2,
+        "Middleware": 1,
+        "Platform": 1,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 1,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Scalability": {
+        "Framework": 2,
+        "Middleware": 2,
+        "Platform": 2,
+        "Architecture": 0,
+        "System": 1,
+        "Approach": 1,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Usability": {
+        "Framework": 2,
+        "Middleware": 1,
+        "Platform": 1,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 1,
+        "Engine": 0,
+        "Robot Services": 1
+    },
+    "Reliability": {
+        "Framework": 2,
+        "Middleware": 1,
+        "Platform": 1,
+        "Architecture": 1,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 1
+    },
+    "Power Management": {
+        "Framework": 1,
+        "Middleware": 1,
+        "Platform": 2,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Privacy": {
+        "Framework": 2,
+        "Middleware": 0,
+        "Platform": 0,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 1,
+        "Engine": 0,
+        "Robot Services": 0
+    },
+    "Effectiveness": {
+        "Framework": 1,
+        "Middleware": 1,
+        "Platform": 0,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 1
+    },
+    "Extensibility": {
+        "Framework": 1,
+        "Middleware": 0,
+        "Platform": 0,
+        "Architecture": 0,
+        "System": 0,
+        "Approach": 0,
+        "Engine": 0,
+        "Robot Services": 0
+    }
+}

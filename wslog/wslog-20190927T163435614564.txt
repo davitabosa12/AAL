@@ -1,5 +1,0 @@
-[Received] 1.4715328216552734 -> {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
-[Received] 7.570788383483887 -> {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
-[Received] 12.585552215576172 -> {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
-[Received] 17.59576416015625 -> {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
-[Received] 25.80554986000061 -> {'Location': 'not defined', 'Entity_Id': '0x169c6', 'Timestamp': ''}
