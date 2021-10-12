@@ -13,7 +13,7 @@
     "amqplib": "^0.5.3",
     "argparse": "^1.0.10",
     "csv-parser": "^2.3.0",
-    "electron": "^6.0.10",
+    "electron": "^11.5.0",
     "protobufjs": "^6.8.8",
     "yargs": "^14.0.0"
   }
